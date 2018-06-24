@@ -1,0 +1,7 @@
+{
+	"name": "Total.js PWA",
+	"short_name": "TotalPWA",
+	"icons": [],
+	"start_url": "/",
+	"display": "standalone"
+}
