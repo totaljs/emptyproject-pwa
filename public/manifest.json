@@ -1,7 +1,13 @@
 {
 	"name": "Total.js PWA",
 	"short_name": "TotalPWA",
-	"icons": [],
+	"icons": [
+		{
+			"src": "/img/icon.png",
+			"sizes": "500x500",
+			"type": "image/png"
+		}
+	],
 	"start_url": "/",
 	"display": "standalone"
 }
