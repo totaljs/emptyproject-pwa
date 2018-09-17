@@ -1,8 +1,8 @@
 var CACHE_NAME = '000001';
 
 var cachefiles = [
-	'https://cdn.componentator.com/spa.min@15.js',
-	'https://cdn.componentator.com/spa.min@15.css',
+	'https://cdn.componentator.com/spa.min@16.js',
+	'https://cdn.componentator.com/spa.min@16.css',
 	'https://cdn.componentator.com/webfonts/fa-brands-400.eot',
 	'https://cdn.componentator.com/webfonts/fa-brands-400.woff2',
 	'https://cdn.componentator.com/webfonts/fa-brands-400.woff',
