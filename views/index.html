@@ -12,15 +12,55 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF" />
 	<meta name="apple-mobile-web-app-title" content="@{config.name}" />
 	<link rel="apple-touch-icon" href="/img/icon.png" />
-	<link href="https://cdn.componentator.com/spa.min@16.css" rel="stylesheet" type="text/css" />
-	<script src="https://cdn.componentator.com/spa.min@16.js"></script>
+	<link href="https://cdn.componentator.com/spa.min@18.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.componentator.com/spa.min@18.js"></script>
 	@{import('head', 'meta', 'default.js', 'default.css', 'manifest')}
 </head>
 <body>
 
+	<div data---="serviceworker__common.version__datasource:common.serviceversion"></div>
+
 	<div class="container">
-		<i class="fa fa-flag"></i> PWA application
+		<img src="/img/icon.png" width="50" alt="logo">
+		<i class="fa fa-flag"></i> PWA application (works offline too)
+		<div data-bind="common.timer__text span">Seconds: <span></span></div>
 	</div>
 
+	<script>
+	var common = {};
+	common.version = '1.67';
+	common.serviceversion = {
+		version: common.version,
+		fallback: '/',
+		assets: [
+			'/manifest.json',
+			'https://cdn.componentator.com/spa.min@18.css',
+			'https://cdn.componentator.com/spa.min@18.js',
+			'https://cdn.componentator.com/fonts/fa-brands-400.eot',
+			'https://cdn.componentator.com/fonts/fa-brands-400.woff2',
+			'https://cdn.componentator.com/fonts/fa-brands-400.woff',
+			'https://cdn.componentator.com/fonts/fa-brands-400.ttf',
+			'https://cdn.componentator.com/fonts/fa-regular-400.eot',
+			'https://cdn.componentator.com/fonts/fa-regular-400.woff2',
+			'https://cdn.componentator.com/fonts/fa-regular-400.woff',
+			'https://cdn.componentator.com/fonts/fa-regular-400.ttf',
+			'https://cdn.componentator.com/fonts/fa-solid-900.eot',
+			'https://cdn.componentator.com/fonts/fa-solid-900.woff2',
+			'https://cdn.componentator.com/fonts/fa-solid-900.woff',
+			'https://cdn.componentator.com/fonts/fa-solid-900.ttf',
+			'/js/default.js',
+			'/css/default.css',
+			'/js/ui.js',
+			'/css/ui.css',
+			'/img/icon.png'
+		]
+	};
+
+	common.timer = 1;
+
+	setInterval(function() {
+		INC('common.timer');
+	}, 1000);
+	</script>
 </body>
 </html>
