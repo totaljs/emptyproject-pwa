@@ -1,6 +1,5 @@
 COMPONENT('serviceworker', 'debug:false;expire:1 day', function(self, config) {
 
-	var worker;
 	var messenger;
 	var datasource;
 
@@ -23,8 +22,7 @@ COMPONENT('serviceworker', 'debug:false;expire:1 day', function(self, config) {
 			$(document).ready(function() {
 				navigator.serviceWorker.register('/sw-jcomponent.js').then(function(registration) {
 					messenger = registration.installing || navigator.serviceWorker.controller || registration.active;
-				})
-				.catch(console.log);
+				}).catch(console.log);
 			});
 		}
 	};
@@ -41,10 +39,10 @@ COMPONENT('serviceworker', 'debug:false;expire:1 day', function(self, config) {
 	};
 
 	self.setter = function(value, path, type) {
-		if (!type)
-			return;
-		datasource.version = value;
-		self.updatecache();
+		if (type) {
+			datasource.version = value;
+			self.updatecache();
+		}
 	};
 
 	self.updatecache = function() {
